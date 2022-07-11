@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TtikTakToe</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="popup open">
+        <div class="popupmessage">
+            <form action="" method="post">
+                <label for="name">What is your name</label>
+                <input type="text" name="name" id="name">
+                <div class="symbols">
+                    <p class="symbolname">Choose your symbol</p>
+                    <input type="button" value="X">
+                    <input type="button" value="O">
+                </div>
+                <input class="submitButton" type="button" value="OK" onclick="closePopup()">
+            </form>
+        </div>
+    </div>
+    <h1>Tik Tak Toe</h1>
+    <div class="players"></div>
+    <div class="gameboard"></div>
+</body>
+</html>
