@@ -11,15 +11,19 @@
 <body>
     <div class="popup open">
         <div class="popupmessage">
-            <form action="" method="post">
+            <form action="" onsubmit="return false" method="post">
                 <label for="name">What is your name</label>
-                <input type="text" name="name" id="name">
+                <input type="text" name="name" id="name" value="" required>
                 <div class="symbols">
                     <p class="symbolname">Choose your symbol</p>
-                    <input type="button" value="X">
-                    <input type="button" value="O">
+                    <label for="symbolX">X</label>
+                    <input type="radio" name="symbol" id="symbolX" required>
+                    <label for="symbolO">O</label>
+                    <input type="radio" name="symbol" id="symbolO">
                 </div>
-                <input class="submitButton" type="button" value="OK" onclick="closePopup()">
+                <!-- <input class="submitButton" type="button" value="OK" onclick="submit()"> -->
+                <button class="submitButton" type="submit" onclick="endTask()">OK</button>
+                <button onclick="test()">test</button>
             </form>
         </div>
     </div>
