@@ -2,15 +2,16 @@ body{
     margin: 0;
     padding: 0;
     background-color: dimgray;
+    position: relative;
 }
 
 .popup {
-    position: relative;
+    position: absolute;
     height: 100vh;
     width: 100vw;
     align-content: center;
     align-items: center;
-    color: rgba($color: #000000, $alpha: .9);
+    background-color: rgba($color: dimgray, $alpha: .8);
     visibility: hidden;
 }
 
@@ -32,4 +33,15 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.gameboard {
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: repeat(3, 150px);
+    gap: 5px;
+    .tile {
+        background-color: white;
+        border: solid 2px black;
+    }
 }

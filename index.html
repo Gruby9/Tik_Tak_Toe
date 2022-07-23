@@ -12,23 +12,43 @@
     <div class="popup open">
         <div class="popupmessage">
             <form action="" onsubmit="return false" method="post">
-                <label for="name">What is your name</label>
-                <input type="text" name="name" id="name" value="" required>
+                <label for="name1">What is your name</label>
+                <input type="text" name="name" id="name1" value="" required>
                 <div class="symbols">
                     <p class="symbolname">Choose your symbol</p>
                     <label for="symbolX">X</label>
-                    <input type="radio" name="symbol" id="symbolX" required>
+                    <input type="radio" name="symbol" id="symbolX" value="X" required>
                     <label for="symbolO">O</label>
-                    <input type="radio" name="symbol" id="symbolO">
+                    <input type="radio" name="symbol" id="symbolO" value="O">
                 </div>
-                <!-- <input class="submitButton" type="button" value="OK" onclick="submit()"> -->
+                <label for="name2">What is your name</label>
+                <input type="text" name="name" id="name2" value="" required>
                 <button class="submitButton" type="submit" onclick="endTask()">OK</button>
-                <button onclick="test()">test</button>
+                <button class="test" onclick="test()">test</button>
             </form>
         </div>
     </div>
     <h1>Tik Tak Toe</h1>
-    <div class="players"></div>
-    <div class="gameboard"></div>
+    <div class="player1">
+        <h1 id="turn1"></h1>
+        <h1 id="player1-name"></h1>
+        <h2 id="player1-score">0</h2>
+    </div>
+    <div class="gameboard">
+        <div class="tile 1 free">I</div>
+        <div class="tile 2 free">I</div>
+        <div class="tile 3 free">I</div>
+        <div class="tile 4 free">I</div>
+        <div class="tile 5 free">I</div>
+        <div class="tile 6 free">I</div>
+        <div class="tile 7 free">I</div>
+        <div class="tile 8 free">I</div>
+        <div class="tile 9 free">I</div>
+    </div>
+    <div class="player2">
+        <h1 id="turn2"></h1>
+        <h1 id="player2-name"></h1>
+        <h2 id="player2-score">0</h2>
+    </div>
 </body>
 </html>
