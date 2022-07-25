@@ -10,23 +10,25 @@ const nameForm1 = document.querySelector('#name1')
 const nameForm2 = document.querySelector('#name2')
 const turn1 = document.querySelector('#turn1')
 const turn2 = document.querySelector('#turn2')
-const tiles = document.querySelectorAll('.tile')
-console.log(tiles)
-console.log(tiles[0].classList)
+const player1Score = document.querySelector('#player1-score')
+const player2Score = document.querySelector('#player2-score')
+const gameboard = document.querySelector('.gameboard')
+const backupGameboard = document.querySelector('.backupGameboard')
+let gameboardCount = 1
 
 function activeTiles() {
+    const tiles = document.querySelectorAll('.tile')
     for (let n = 0; n < tiles.length; n++) {
         let i = n;
         tiles[n].addEventListener('click', function activate(event) {
+            tiles[n].textContent = activeSymbol;
             turn1.textContent = ''
             turn2.textContent = ''
+            gameboardCount++
             turn();
-            tiles[n].textContent = activeSymbol;
             tiles[n].classList.remove('free');
             tiles[n].classList.add('ocupied')
             checkTheBoard();      
-            console.log(activeSymbol)
-            console.log(tiles)
             tiles[n].removeEventListener('click', activate)
         })
     }
@@ -56,10 +58,8 @@ function createPlayers() {
     }
     player1 = playerFactory(playerName1, playerSymbol1);
     player2 = playerFactory(playerName2, playerSymbol2)
-    console.log(player1, player2)
     activeTiles();
     turn();
-    console.log(player1.symbol)
 }
 
 function endTask() {
@@ -70,24 +70,31 @@ function endTask() {
     }
 }
 
-const gameboard = (() => {
-    let board = [];
-
-}) ();
 
 let count = 3;
 function turn() {
     if (count % 2 === 1) {
         activeSymbol = player1.symbol;
-        turn2.textContent = 'Your Turn!'
+        turn1.textContent = 'Your Turn!'
     } else {
         activeSymbol = player2.symbol
-        turn1.textContent = 'Your Turn!'
+        turn2.textContent = 'Your Turn!'
     }
     count++
 }
 
+function beginAgain() {
+    gameboard.innerHTML = backupGameboard.innerHTML
+    gameboardCount = 1;
+    player1Score.innerHTML = ''
+    player2Score.innerHTML = ''
+    player1Score.innerHTML = player1.score
+    player2Score.innerHTML = player2.score
+    activeTiles();
+}
+
 function checkTheBoard() {
+    const tiles = document.querySelectorAll('.tile')
     if (tiles[0].classList.contains('ocupied') && 
         tiles[1].classList.contains('ocupied') && 
         tiles[2].classList.contains('ocupied')) {
@@ -96,20 +103,146 @@ function checkTheBoard() {
                 tiles[1].innerHTML ===
                 tiles[2].innerHTML) {
                     if (tiles[0].innerHTML === player1.symbol){
-                        alert('player1 wins')
+                        player1.score++
+                        alert('Player 1 wins!')
+                        beginAgain()
                     } else {
-                        alert('player2 wins')
+                        player2.score++
+                        alert('Player 2 wins!')
+                        beginAgain()
                     }
                 }
+    } 
+    if (tiles[3].classList.contains('ocupied') && 
+        tiles[4].classList.contains('ocupied') && 
+        tiles[5].classList.contains('ocupied')) {
+            if (tiles[3].innerHTML === 
+                tiles[4].innerHTML && 
+                tiles[4].innerHTML ===
+                tiles[5].innerHTML) {
+                    if (tiles[3].innerHTML === player1.symbol){
+                        player1.score++
+                        alert('Player 1 wins!')
+                        beginAgain()
+                    } else {
+                        player2.score++
+                        alert('Player 2 wins!')
+                        beginAgain()
+                    }
+                }
+    }   
+    if (tiles[6].classList.contains('ocupied') && 
+        tiles[7].classList.contains('ocupied') && 
+        tiles[8].classList.contains('ocupied')) {
+            if (tiles[6].innerHTML === 
+                tiles[7].innerHTML && 
+                tiles[7].innerHTML ===
+                tiles[8].innerHTML) {
+                    if (tiles[6].innerHTML === player1.symbol){
+                        player1.score++
+                        alert('Player 1 wins!')
+                        beginAgain()
+                    } else {
+                        player2.score++
+                        alert('Player 2 wins!')
+                        beginAgain()
+                    }
+                }
+    } 
+    if (tiles[0].classList.contains('ocupied') && 
+        tiles[3].classList.contains('ocupied') && 
+        tiles[6].classList.contains('ocupied')) {
+            if (tiles[0].innerHTML === 
+                tiles[3].innerHTML && 
+                tiles[3].innerHTML ===
+                tiles[6].innerHTML) {
+                    if (tiles[0].innerHTML === player1.symbol){
+                        player1.score++
+                        alert('Player 1 wins!')
+                        beginAgain()
+                    } else {
+                        player2.score++
+                        alert('Player 2 wins!')
+                        beginAgain()
+                    }
+                }
+    } 
+    if (tiles[1].classList.contains('ocupied') && 
+        tiles[4].classList.contains('ocupied') && 
+        tiles[7].classList.contains('ocupied')) {
+            if (tiles[1].innerHTML === 
+                tiles[4].innerHTML && 
+                tiles[4].innerHTML ===
+                tiles[7].innerHTML) {
+                    if (tiles[1].innerHTML === player1.symbol){
+                        player1.score++
+                        alert('Player 1 wins!')
+                        beginAgain()
+                    } else {
+                        player2.score++
+                        alert('Player 2 wins!')
+                        beginAgain()
+                    }
+                }
+    } 
+    if (tiles[2].classList.contains('ocupied') && 
+        tiles[5].classList.contains('ocupied') && 
+        tiles[8].classList.contains('ocupied')) {
+            if (tiles[2].innerHTML === 
+                tiles[5].innerHTML && 
+                tiles[5].innerHTML ===
+                tiles[8].innerHTML) {
+                    if (tiles[2].innerHTML === player1.symbol){
+                        player1.score++
+                        alert('Player 1 wins!')
+                        beginAgain()
+                    } else {
+                        player2.score++
+                        alert('Player 2 wins!')
+                        beginAgain()
+                    }
+                }
+    } 
+    if (tiles[0].classList.contains('ocupied') && 
+        tiles[4].classList.contains('ocupied') && 
+        tiles[8].classList.contains('ocupied')) {
+            if (tiles[0].innerHTML === 
+                tiles[4].innerHTML && 
+                tiles[4].innerHTML ===
+                tiles[8].innerHTML) {
+                    if (tiles[0].innerHTML === player1.symbol){
+                        player1.score++
+                        alert('Player 1 wins!')
+                        beginAgain()
+                    } else {
+                        player2.score++
+                        alert('Player 2 wins!')
+                        beginAgain()
+                    }
+                }
+    } 
+    if (tiles[2].classList.contains('ocupied') && 
+        tiles[4].classList.contains('ocupied') && 
+        tiles[6].classList.contains('ocupied')) {
+            if (tiles[2].innerHTML === 
+                tiles[4].innerHTML && 
+                tiles[4].innerHTML ===
+                tiles[6].innerHTML) {
+                    if (tiles[2].innerHTML === player1.symbol){
+                        player1.score++
+                        alert('Player 1 wins!')
+                        beginAgain()
+                    } else {
+                        player2.score++
+                        alert('Player 2 wins!')
+                        beginAgain()
+                    }
+                }
+    } 
+    if (gameboardCount === 8) {
+        alert('It is a tie')
+        beginAgain()
     }
 }
 
-// submitButton.addEventListener('click', test())
-
-// function test() {
-//     console.log(!nameForm, !sybmbolX, !form)
-//     console.log(nameForm.checkValidity())
-//     console.log(sybmbolX.checked)
-//     console.log(sybmbolO.checked)
-// }
 

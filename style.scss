@@ -1,8 +1,11 @@
-body{
+body,
+html,
+:root {
     margin: 0;
     padding: 0;
     background-color: dimgray;
     position: relative;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 .popup {
@@ -17,22 +20,69 @@ body{
 
 .popupmessage {
     position: absolute;
-    height: 300px;
-    width: 500px;
-    background-color: wheat;
+    background-color: rgb(185, 185, 185);
     transform-origin: center;
+    padding: 30px;
     top: 20vh;
-    left: calc(50vw - 250px);
+    left: calc(50vw - 250px);   
+    border-radius: 20px;
+    box-shadow: 10px 10px 0px 5px black;
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }         
+    input,
+    label,
+    p {
+        font-size: x-large;
+        margin: 0;
+    }
+    input {
+        border: 3px solid black;
+        border-radius: 10px;
+    }
+    #name1,
+    #name2 {
+        margin-bottom: 20px;
+    }
+    .labelX,
+    .labelO {
+        padding: 15px 5px 15px 10px;
+    }
+    #symbolX,
+    #symbolO {
+        height: 20px;
+        width: 20px;
+        border: 3px solid black;
+        border-radius: 10px;
+    }
+    .symbols {
+        .radio {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+    }
+    .submitButton {
+        font-size: x-large;
+        border: 3px solid black;
+        border-radius: 10px;
+        background-color: rgb(214, 255, 214);
+        padding: 5px 10px 5px 10px; 
+        box-shadow: 4px 4px 0px 2px rgb(0, 0, 0);
+    }
 }
+
 
 .open {
     visibility: visible;
 }
 
-form {
+.game {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: space-evenly;    
 }
 
 .gameboard {
@@ -44,4 +94,9 @@ form {
         background-color: white;
         border: solid 2px black;
     }
+}
+
+.backupGameboard {
+    visibility: hidden;
+    
 }

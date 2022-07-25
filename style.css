@@ -1,8 +1,11 @@
-body {
+body,
+html,
+:root {
   margin: 0;
   padding: 0;
   background-color: dimgray;
   position: relative;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .popup {
@@ -20,20 +23,18 @@ body {
 
 .popupmessage {
   position: absolute;
-  height: 300px;
-  width: 500px;
-  background-color: wheat;
+  background-color: #b9b9b9;
   -webkit-transform-origin: center;
           transform-origin: center;
+  padding: 30px;
   top: 20vh;
   left: calc(50vw - 250px);
+  border-radius: 20px;
+  -webkit-box-shadow: 10px 10px 0px 5px black;
+          box-shadow: 10px 10px 0px 5px black;
 }
 
-.open {
-  visibility: visible;
-}
-
-form {
+.popupmessage form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -44,6 +45,72 @@ form {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.popupmessage input,
+.popupmessage label,
+.popupmessage p {
+  font-size: x-large;
+  margin: 0;
+}
+
+.popupmessage input {
+  border: 3px solid black;
+  border-radius: 10px;
+}
+
+.popupmessage #name1,
+.popupmessage #name2 {
+  margin-bottom: 20px;
+}
+
+.popupmessage .labelX,
+.popupmessage .labelO {
+  padding: 15px 5px 15px 10px;
+}
+
+.popupmessage #symbolX,
+.popupmessage #symbolO {
+  height: 20px;
+  width: 20px;
+  border: 3px solid black;
+  border-radius: 10px;
+}
+
+.popupmessage .symbols .radio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 20px;
+}
+
+.popupmessage .submitButton {
+  font-size: x-large;
+  border: 3px solid black;
+  border-radius: 10px;
+  background-color: #d6ffd6;
+  padding: 5px 10px 5px 10px;
+  -webkit-box-shadow: 4px 4px 0px 2px black;
+          box-shadow: 4px 4px 0px 2px black;
+}
+
+.open {
+  visibility: visible;
+}
+
+.game {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .gameboard {
@@ -59,5 +126,9 @@ form {
 .gameboard .tile {
   background-color: white;
   border: solid 2px black;
+}
+
+.backupGameboard {
+  visibility: hidden;
 }
 /*# sourceMappingURL=style.css.map */
