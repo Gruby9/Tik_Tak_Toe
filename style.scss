@@ -89,10 +89,33 @@ html,
     display: grid;
     grid-template-columns: repeat(3, 150px);
     grid-template-rows: repeat(3, 150px);
-    gap: 5px;
+    gap: 20px;
     .tile {
         background-color: white;
         border: solid 2px black;
+        text-align: center;
+        font-size: 7em;
+        border: 5px solid black;
+        border-radius: 20px;
+        box-shadow: 5px 5px 0px 2px rgb(0, 0, 0);
+    }
+}
+
+.player1,
+.player2 {
+    border: 5px solid black;
+    border-radius: 20px;
+    box-shadow: 5px 5px 0px 2px rgb(0, 0, 0);
+    width: 300px;
+    #turn1,
+    #turn2 {
+        height: 70px;
+        width: 100px;
+        background-color: seagreen;
+    }
+    #turn1:empty,
+    #turn2:empty {
+        background-color: rgba($color: dimgray, $alpha: 0);
     }
 }
 

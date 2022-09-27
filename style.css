@@ -120,12 +120,43 @@ html,
       grid-template-columns: repeat(3, 150px);
   -ms-grid-rows: (150px)[3];
       grid-template-rows: repeat(3, 150px);
-  gap: 5px;
+  gap: 20px;
 }
 
 .gameboard .tile {
   background-color: white;
   border: solid 2px black;
+  text-align: center;
+  font-size: 7em;
+  border: 5px solid black;
+  border-radius: 20px;
+  -webkit-box-shadow: 5px 5px 0px 2px black;
+          box-shadow: 5px 5px 0px 2px black;
+}
+
+.player1,
+.player2 {
+  border: 5px solid black;
+  border-radius: 20px;
+  -webkit-box-shadow: 5px 5px 0px 2px black;
+          box-shadow: 5px 5px 0px 2px black;
+  width: 300px;
+}
+
+.player1 #turn1,
+.player1 #turn2,
+.player2 #turn1,
+.player2 #turn2 {
+  height: 70px;
+  width: 100px;
+  background-color: seagreen;
+}
+
+.player1 #turn1:empty,
+.player1 #turn2:empty,
+.player2 #turn1:empty,
+.player2 #turn2:empty {
+  background-color: rgba(105, 105, 105, 0);
 }
 
 .backupGameboard {
