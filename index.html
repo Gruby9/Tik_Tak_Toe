@@ -16,7 +16,7 @@
         <div class="popupmessage">
             <form action="" onsubmit="return false" method="post">
                 <label class="label1" for="name1">What is first Player's name</label>
-                <input type="text" name="name" id="name1" value="" required>
+                <input type="text" name="name" id="name1" value="" maxlength="12" required>
                 <div class="symbols">
                     <p class="symbolname">First player's symbol</p>
                     <div class="radio">
@@ -27,12 +27,12 @@
                     </div>
                 </div>
                 <label class="label2" for="name2">What is second Player's name</label>
-                <input type="text" name="name" id="name2" value="" required>
+                <input type="text" name="name" id="name2" value="" maxlength="12" required>
                 <button class="submitButton" type="submit" onclick="endTask()">Start!</button>
             </form>
         </div>
     </div>
-    <h1>Tik Tak Toe</h1>
+    <h1 class="maintitle">Tik Tak Toe</h1>
     <div class="game">
         <div class="player1">
             <h1 id="turn1"></h1>

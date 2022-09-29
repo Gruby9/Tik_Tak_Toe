@@ -8,6 +8,11 @@ html,
     font-family: 'Roboto Condensed', sans-serif;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .popup {
     position: absolute;
     height: 100vh;
@@ -16,6 +21,7 @@ html,
     align-items: center;
     background-color: rgba($color: dimgray, $alpha: .8);
     visibility: hidden;
+    left: 60px;
 }
 
 .popupmessage {
@@ -80,6 +86,14 @@ html,
     visibility: visible;
 }
 
+.maintitle{
+    color: white;
+    font-size: 4em;
+    text-align: center;
+    text-shadow: 6px 6px black;
+    padding: 40px 0 40px 0;
+}
+
 .game {
     display: flex;
     justify-content: space-evenly;    
@@ -103,19 +117,38 @@ html,
 
 .player1,
 .player2 {
+    width: 300px; 
+    height: 310px;
     border: 5px solid black;
     border-radius: 20px;
     box-shadow: 5px 5px 0px 2px rgb(0, 0, 0);
-    width: 300px;
     #turn1,
     #turn2 {
         height: 70px;
-        width: 100px;
+        width: 300px;
         background-color: seagreen;
+        border-radius: 15px 15px 0 0;
+        text-align: center;
+        padding-top: 30px;
     }
     #turn1:empty,
     #turn2:empty {
         background-color: rgba($color: dimgray, $alpha: 0);
+    }
+    #player1-name,
+    #player2-name {
+        text-align: center;
+        padding-top: 30px;
+    }
+    .score{
+        padding-top: 30px;
+        font-size: 2em;
+        text-align: center;
+    }
+    #player1-score,
+    #player2-score {
+        font-size: 2.5em;
+        text-align: center;
     }
 }
 
